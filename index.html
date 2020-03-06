@@ -1,9 +1,48 @@
+<!DOCTYPE html>
 <html>
+<head>
+<style type="text/css">
+#select {border:1px solid #aaaaaa;}
+</style>
+<script>
+function Parking(){
+	document.getElementById("parking").style="display:"
+	document.getElementById("pickup").style="display:none"
+}
+function PickUp(){
+	document.getElementById("parking").style="display:none"
+	document.getElementById("pickup").style="display:"
+}
+
+</script>
+</head>
 <body>
-<form action="SignUp.php" method="post">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
-<input type="submit">
+
+<div id="upload">
+<form action="upload_file.php" method="post">
+<input type="file" name="file"><br>
+<input type="submit" value="Upload">
 </form>
+</div>
+
+
+<div id="select">
+<button type="button" onclick="Parking()">Parking</button>
+<button type="button" onclick="PickUp()">PickUp</button>
+</div>
+
+<div id="parking" style="display:none">
+<P>Parking</P>
+<form action="SignIn.php" method="post">
+Username: <input type="text" name="username"><br>
+Password: <input type="password" name="password"><br>
+<input type="submit" text="Sign In">
+</form>
+</div>
+
+<div id="pickup" style="display:none">
+<P>Pick Up</P>
+</div>
+
 </body>
 </html>
