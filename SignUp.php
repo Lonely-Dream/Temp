@@ -1,6 +1,8 @@
 <html>
 <body>
-<P>Wellcome,<?php echo $_POST["Username"];?></P>
-<P>Your password is <?php echo $_POST["Password"];?></P>
+
+Welcome <?php echo $_POST["name"]; ?><br>
+Your email address is: <?php echo $_POST["email"]; ?>
+
 </body>
 </html>
