@@ -27,5 +27,11 @@ else{
 	else {
 		echo "move faild";
 	}
+	
+	$params="upload/".$_FILES["file"]["name"];
+	$cmd="python3 predict.py ";
+	
+	$output=exec($cmd.$params);
+	echo $output;
 }
 ?>
