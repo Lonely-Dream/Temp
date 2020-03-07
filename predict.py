@@ -191,7 +191,7 @@ class CardPredictor:
             chars_train = preprocess_hog(chars_train)
             # chars_train = chars_train.reshape(-1, 20, 20).astype(np.float32)
             chars_label = np.array(chars_label)
-            print(chars_train.shape)
+            #print(chars_train.shape)
             self.model.train(chars_train, chars_label)
         if os.path.exists("svmchinese.dat"):
             self.modelchinese.load("svmchinese.dat")
@@ -214,7 +214,7 @@ class CardPredictor:
             chars_train = preprocess_hog(chars_train)
             # chars_train = chars_train.reshape(-1, 20, 20).astype(np.float32)
             chars_label = np.array(chars_label)
-            print(chars_train.shape)
+            #print(chars_train.shape)
             self.modelchinese.train(chars_train, chars_label)
 
     def save_traindata(self):
@@ -298,7 +298,7 @@ class CardPredictor:
         except ValueError:
             image, contours, hierarchy = cv2.findContours(img_edge2, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         contours = [cnt for cnt in contours if cv2.contourArea(cnt) > Min_Area]
-        print('len(contours)', len(contours))
+        #print('len(contours)', len(contours))
         # 一一排除不是车牌的矩形区域
         car_contours = []
         for cnt in contours:
@@ -317,9 +317,9 @@ class CardPredictor:
             # cv2.imshow("edge4", oldimg)
             # print(rect)
 
-        print(len(car_contours))
+        #print(len(car_contours))
 
-        print("精确定位")
+        #print("精确定位")
         card_imgs = []
         # 矩形区域可能是倾斜的矩形，需要矫正，以便使用颜色定位
         for rect in car_contours:
@@ -413,9 +413,9 @@ class CardPredictor:
                 limit2 = 124  # 有的图片有色偏偏紫
             elif black + white >= card_img_count * 0.7:  # TODO
                 color = "bw"
-            print(color)
+            #print(color)
             colors.append(color)
-            print(blue, green, yello, black, white, card_img_count)
+            #print(blue, green, yello, black, white, card_img_count)
             # cv2.imshow("color", card_img)
             # cv2.waitKey(0)
             if limit1 == 0:
@@ -474,7 +474,7 @@ class CardPredictor:
                 x_threshold = (x_min + x_average) / 2
                 wave_peaks = find_waves(x_threshold, x_histogram)
                 if len(wave_peaks) == 0:
-                    print("peak less 0:")
+                    #print("peak less 0:")
                     continue
                 # 认为水平方向，最大的波峰为车牌区域
                 wave = max(wave_peaks, key=lambda x: x[1] - x[0])
@@ -494,7 +494,7 @@ class CardPredictor:
                 #	cv2.line(card_img, pt1=(wave[0], 5), pt2=(wave[1], 5), color=(0, 0, 255), thickness=2)
                 # 车牌字符数应大于6
                 if len(wave_peaks) <= 6:
-                    print("peak less 1:", len(wave_peaks))
+                    #print("peak less 1:", len(wave_peaks))
                     continue
 
                 wave = max(wave_peaks, key=lambda x: x[1] - x[0])
@@ -523,13 +523,13 @@ class CardPredictor:
                         wave_peaks.pop(2)
 
                 if len(wave_peaks) <= 6:
-                    print("peak less 2:", len(wave_peaks))
+                    #print("peak less 2:", len(wave_peaks))
                     continue
                 part_cards = seperate_card(gray_img, wave_peaks)
                 for i, part_card in enumerate(part_cards):
                     # 可能是固定车牌的铆钉
                     if np.mean(part_card) < 255 / 5:
-                        print("a point")
+                        #print("a point")
                         continue
                     part_card_old = part_card
                     w = abs(part_card.shape[1] - SZ) // 2
@@ -544,7 +544,7 @@ class CardPredictor:
                         charactor = provinces[int(resp[0]) - PROVINCE_START]
                     else:
                         resp = self.model.predict(part_card)
-                        charactor = chr(resp[0])
+                        charactor = chr(int(resp[0]))
                     # 判断最后一个数是否是车牌边缘，假设车牌边缘被认为是1
                     if charactor == "1" and i == len(part_cards) - 1:
                         if part_card_old.shape[0] / part_card_old.shape[1] >= 7:  # 1太细，认为是边缘
@@ -555,9 +555,10 @@ class CardPredictor:
                 break
 
         return predict_result, roi, card_color  # 识别到的字符、定位的车牌图像、车牌颜色
-
-
 c = CardPredictor()
 c.train_svm()
-r, roi, color = c.predict(input())
-print(r)
+r, roi, color = c.predict(sys.argv[1])
+lp=""
+for i in range(len(r)):
+    lp=lp+r[i]
+print(lp)
