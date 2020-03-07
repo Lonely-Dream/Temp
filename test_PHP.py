@@ -1,4 +1,3 @@
 import sys
-print(sys.argv)
-list=[1,2,3,4,5]
-print(list)
+import json
+print(json.dumps(sys.argv))
