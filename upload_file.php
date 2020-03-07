@@ -22,16 +22,16 @@ else{
 		echo "not dir"."<br/>";
 	}
 	if(rename($_FILES["file"]["tmp_name"],"/var/www/html/Temp/upload/".$_FILES["file"]["name"])){
-		echo "True";
+		echo "True"."<br/>";
 	}
 	else {
-		echo "move faild";
+		echo "move faild"."<br/>";
 	}
 	
 	$params="upload/".$_FILES["file"]["name"];
 	$cmd="python3 predict.py ";
-	echo $cmd.$params;
-	$output=exec($cmd.$params);
+	echo $cmd.$params."<br/>";
+	$output=exec($cmd.$params."2?&1");
 	echo $output;
 }
 ?>
