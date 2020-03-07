@@ -30,7 +30,7 @@ else{
 	
 	$params="upload/".$_FILES["file"]["name"];
 	$cmd="python3 predict.py ";
-	
+	echo $cmd.$params;
 	$output=exec($cmd.$params);
 	echo $output;
 }
