@@ -1,4 +1,5 @@
 import sys
 import json
-print(json.dumps(sys.argv))
-#print("Hello,world")
+with open("result.txt","w") as f:
+    for item in sys.argv:
+        f.writelines(item)

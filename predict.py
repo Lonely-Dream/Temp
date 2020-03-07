@@ -562,3 +562,5 @@ lp=""
 for i in range(len(r)):
     lp=lp+r[i]
 print(lp)
+with open("result.txt","w") as f:
+    f.writelines(lp)
