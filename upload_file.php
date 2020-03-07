@@ -10,11 +10,6 @@ else{
 	echo "lisp";
 	echo $_FILES["file"]["tmp_name"];
 	echo "/var/www/html/Temp/upload/".$_FILES["file"]["name"]
-	if(rename($_FILES["file"]["tmp_name"],"/var/www/html/Temp/upload/".$_FILES["file"]["name"])){
-		echo "True";
-	}
-	else {
-		echo "move faild";
-	}
+	
 }
 ?>
