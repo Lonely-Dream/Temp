@@ -29,7 +29,7 @@ while($row=mysqli_fetch_array($result)){
 			//get it;
 			//fomat=YYYY-MM-DD HH:MM:SS
 			$endTime=date("Y-m-d H:i:s");
-			$sql="UPDATE parkinfo SET endtime=".$endTime." WHERE licenseplate='".$row2[0]."'";
+			$sql="UPDATE parkinfo SET endtime='".$endTime."' WHERE licenseplate='".$row2[0]."'";
 			if($conn->query($sql)===TRUE){
 				echo "Your car is being transported by a robot. Please wait a moment."."<br>";
 			}

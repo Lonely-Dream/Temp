@@ -75,7 +75,7 @@ else{
 	//fomat=YYYY-MM-DD HH:MM:SS
 	$startTime=date("Y-m-d H:i:s");
 	
-	$sql="INSERT INTO parkinfo (licenseplate,starttime) VALUES ('".$output[0]."',".$startTime.")";
+	$sql="INSERT INTO parkinfo (licenseplate,starttime) VALUES ('".$output[0]."','".$startTime."')";
 	mysqli_query($con,"set names utf8");
 	$result=mysqli_query($con,$sql);
 	if(!$result){
