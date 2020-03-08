@@ -79,7 +79,7 @@ else{
 	mysqli_query($con,"set names utf8");
 	$result=mysqli_query($con,$sql);
 	if(!$result){
-		echo "Registration failed!".mysqli_error()."<br>";
+		echo "Registration failed!".$sql."<br>";
 		//mysqli_free_result($result);
 		mysqli_close($con); 
 		exit();
