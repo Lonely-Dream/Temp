@@ -1,5 +1,5 @@
 <?php
-$servername="167.179.110.241";
+$servername="localhost";
 $username="root";
 $password="caizhenhui!";
 $dbname="SmartPark";
