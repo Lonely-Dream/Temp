@@ -29,7 +29,7 @@ $sql = "CREATE TABLE users(
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 tel VARCHAR(11) NOT NULL,
 password VARCHAR(16) NOT NULL,
-licenseplate VARCHAR(7) NOT NULL,
+licenseplate VARCHAR(9) NOT NULL,
 facedata MEDIUMBLOB
 ) DEFAULT CHARSET=utf8";
 if($conn->query($sql)===TRUE){
@@ -41,7 +41,7 @@ else{
 
 //Create parkinfo table
 $sql = "CREATE TABLE parkinfo(
-licenseplate VARCHAR(7) NOT NULL,
+licenseplate VARCHAR(9) NOT NULL,
 starttime DATETIME NOT NULL,
 endtime DATETIME
 ) DEFAULT CHARSET=utf8";
