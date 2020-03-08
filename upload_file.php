@@ -48,7 +48,7 @@ else{
 	echo "<br/>";
 	echo "var:".$var."<br/>";
 	
-	//search LP
+	/* //search LP
 	$servername="localhost";
 	$username="root";
 	$password="caizhenhui!";
@@ -78,6 +78,6 @@ else{
 	//	echo $row."<br>";
 	//}
 	mysqli_free_result($result);
-	mysqli_close($con);
+	mysqli_close($con); */
 }
 ?>
