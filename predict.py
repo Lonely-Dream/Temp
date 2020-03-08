@@ -570,6 +570,7 @@ for i in range(len(r)):
 if len(r)<5:
     print("result error!")
 else:
+    print(lp)
     print("result successful!")
 with open("result.txt","w") as f:
-    f.writelines(lp.encode('utf-8'))
+    f.write(lp.encode('utf-8'))
