@@ -8,7 +8,7 @@ else{
 	echo "Size:".$_FILES["file"]["size"]."<br/>";
 	echo "Stored in:".$_FILES["file"]["tmp_name"]."<br/>";
 	echo $_FILES["file"]["tmp_name"]."<br/>";
-	echo "/var/www/html/Temp/upload/".$_FILES["file"]["name"]."<br/>";
+	echo "upload/".$_FILES["file"]["name"]."<br/>";
 	if(file_exists("upload/".$_FILES["file"]["name"])){
 		echo "File already exists."."<br/>";
 		if(unlink("upload/".$_FILES["file"]["name"])){
@@ -47,9 +47,5 @@ else{
 	var_dump($output);
 	echo "<br/>";
 	echo "var:".$var."<br/>";
-	$resultFile=fopen("result.txt","r");
-	echo fgets($resultFile)."<br/>";
-	
-	fclose($resultFile);
 }
 ?>
