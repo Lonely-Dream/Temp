@@ -10,7 +10,7 @@ if(mysqli_connect_errno()){
 }
 
 $sql="SELECT * FROM users WHERE tel='".$_POST["tel"]."' and password='".$_POST["password"]."'";
-mysqli_query($con,"set names utf8");
+
 $result=mysqli_query($con,$sql);
 if(mysqli_num_rows($result)==0){
 	echo "wrong tel or password!"."<br>";
