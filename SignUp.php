@@ -5,7 +5,7 @@ $password="caizhenhui!";
 $dbname="SmartPark";
 
 $conn = new mysqli($servername,$username,$password,$dbname);
-if($conn){
+if($conn->connect_error){
 	die("connect faild:".$conn->connect_error);
 }
 $sql = "CREATE TABLE users(
