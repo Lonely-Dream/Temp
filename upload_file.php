@@ -1,4 +1,5 @@
 <?php
+header("Content-type:text/html; charset=utf-8");
 if($_FILES["file"]["error"]>0){
 	echo "Error:".$_FILES["file"]["error"]."<br/>";
 }
@@ -8,6 +9,8 @@ else{
 	echo "Stored in:".$_FILES["file"]["tmp_name"]."<br/>";
 	echo $_FILES["file"]["tmp_name"]."<br/>";
 	echo "/var/www/html/Temp/upload/".$_FILES["file"]["name"]."<br/>";
+	
+	
 	
 	if(file_exists($_FILES["file"]["tmp_name"])){
 		echo "exist"."<br/>";
@@ -38,6 +41,7 @@ else{
 	echo "var:".$var."<br/>";
 	$resultFile=fopen("result.txt","r");
 	echo fgets($resultFile)."<br/>";
+	
 	fclose($resultFile);
 }
 ?>

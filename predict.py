@@ -8,8 +8,6 @@ import os
 import io
 import json
 
-sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding="utf-8")
-
 SZ = 20  # 训练图片长宽
 MAX_WIDTH = 1000  # 原始图片最大宽度
 Min_Area = 2000  # 车牌区域允许最大面积
@@ -560,6 +558,9 @@ class CardPredictor:
                 break
 
         return predict_result, roi, card_color  # 识别到的字符、定位的车牌图像、车牌颜色
+print(sys.stdout)
+sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding="utf-8")
+print(sys.stdout)
 c = CardPredictor()
 c.train_svm()
 r, roi, color = c.predict(sys.argv[1])
@@ -571,4 +572,4 @@ if len(r)<5:
 else:
     print("result successful!")
 with open("result.txt","w") as f:
-    f.writelines(lp)
+    f.writelines(lp.encode('utf-8'))
