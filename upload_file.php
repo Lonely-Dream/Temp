@@ -59,7 +59,7 @@ else{
 		die("connect faild:".mysqli_connect_error());
 	}
 	
-	$sql="SELECT * FROM car WHERE licenseplate='".$output[1]."'";
+	$sql="SELECT * FROM users WHERE licenseplate='".$output[1]."'";
 	$result=mysqli_query($con,$sql);
 	if(mysqli_num_rows($result)==0){
 		//empty
