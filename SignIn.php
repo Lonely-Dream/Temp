@@ -10,6 +10,7 @@ if(mysqli_connect_errno()){
 }
 
 $sql="SELECT * FROM users WHERE tel='".$_POST["tel"]."' and password='".$_POST["password"]."'";
+mysqli_query($con,"set names utf8");
 $result=mysqli_query($con,$sql);
 if(mysqli_num_rows($result)==0){
 	echo "wrong tel or password!"."<br>";
@@ -21,6 +22,7 @@ while($row=mysqli_fetch_array($result)){
 	$endTime=date("Y-m-d H:i:s");
 	$sql="UPDATE parkinfo SET endtime='".$endTime."' WHERE licenseplate='".$row[3]."' and endtime IS NULL";
 	echo $sql."<br>";
+	mysqli_query($con,"set names utf8");
 	if(mysqli_query($con,$sql)){
 		echo $endTime." Your car is being transported by a robot. Please wait a moment."."<br>";
 		mysqli_close($con);
