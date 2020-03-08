@@ -22,7 +22,7 @@ while($row=mysqli_fetch_array($result)){
 	if(!$result2){
 		echo "Sign In ERROR ".$sql."<br>";
 		$conn->close();
-		exit()
+		exit();
 	}
 	while($row2=mysqli_fetch_array($result2)){
 		if($row2[2]===NULL){
