@@ -29,7 +29,7 @@ else{
 	}
 	
 	$params="upload/".$_FILES["file"]["name"];
-	$cmd="python3 test_PHP2.py ";
+	$cmd="python3 predict.py ";
 	echo $cmd.$params."<br/>";
 	$ret=exec($cmd.$params." 2>&1",$output,$var);
 	echo "ret:".$ret."<br/>";
