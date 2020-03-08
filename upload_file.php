@@ -47,5 +47,24 @@ else{
 	var_dump($output);
 	echo "<br/>";
 	echo "var:".$var."<br/>";
+	
+	//search LP
+	$servername="localhost";
+	$username="root";
+	$password="caizhenhui!";
+	$dbname="SmartPark";
+	
+	$con = mysqli_connect($servername,$username,$password,$dbname);
+	if(mysqli_connect_errno()){
+		die("connect faild:".mysqli_connect_error());
+	}
+	
+	$sql="SELECT * FROM car WHERE licenseplate='".$output[1]."'";
+	$result=mysqli_query($con,$sql);
+	while($row = mysqli_fetch_array($result)){
+		echo $row."<br>";
+	}
+	mysql_free_result($result);
+	mysql_close($con);
 }
 ?>
