@@ -20,10 +20,10 @@ else{
 
 $sql="SELECT * FROM users";
 if($result=$conn->query($sql)){
-	else $result."<br>";
+	echo $result."<br>";
 }
 else{
-	else $result."  ERROR"."<br>";
+	echo $result."  ERROR"."<br>";
 }
 
 
