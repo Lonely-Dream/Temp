@@ -22,6 +22,9 @@ $sql="SELECT * FROM users";
 if($result=$conn->query($sql)){
 	else $result."<br>";
 }
+else{
+	else $result."  ERROR"."<br>";
+}
 
 
 $conn->close();
