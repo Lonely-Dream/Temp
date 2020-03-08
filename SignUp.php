@@ -9,7 +9,7 @@ if($conn->connect_error){
 	die("connect faild:".$conn->connect_error);
 }
 
-$sql="INSERT INTO users (tel,password,licenseplate) VALUES ('".$_POST["tel"]."','".$_POST["password"]."','".$_POST["licenseplate"].")";
+$sql="INSERT INTO users (tel,password,licenseplate) VALUES ('".$_POST["tel"]."','".$_POST["password"]."','".$_POST["licenseplate"]."')";
 echo "SQL:".$sql."<br>";
 if($conn->query($sql)===TRUE){
 	echo "registration success!"."<br>";
