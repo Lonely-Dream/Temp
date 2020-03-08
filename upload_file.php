@@ -61,10 +61,23 @@ else{
 	
 	$sql="SELECT * FROM car WHERE licenseplate='".$output[1]."'";
 	$result=mysqli_query($con,$sql);
-	while($row = mysqli_fetch_array($result)){
-		echo $row."<br>";
+	if(mysqli_num_rows($result)==0){
+		//empty
+		//jump to signUp
+		mysqli_free_result($result);
+		mysqli_close($con);
+		header(string:"Location:http://167.179.110.241/Temp/SignUp.html");
+		exit();
 	}
-	mysql_free_result($result);
-	mysql_close($con);
+	//parking
+	echo $row."<br>";
+	echo "Parking get start time".<br>;
+	
+	
+	//while($row = mysqli_fetch_array($result)){
+	//	echo $row."<br>";
+	//}
+	mysqli_free_result($result);
+	mysqli_close($con);
 }
 ?>

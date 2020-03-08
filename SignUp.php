@@ -8,25 +8,14 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if($conn->connect_error){
 	die("connect faild:".$conn->connect_error);
 }
-$sql = "CREATE TABLE users(
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-tel VARCHAR(11) NOT NULL,
-password VARCHAR(16) NOT NULL,
-facedata MEDIUMBLOB
-)";
+
+$sql="INSERT INTO users (tel,password,licenseplate) VALUES ('".$_POST["tel"]."','".$_POST["password"]."','".$_POST["licenseplate"].")";
+echo "SQL:".$sql."<br>";
 if($conn->query($sql)===TRUE){
-	echo "TABLE users created successfully!"."<br>";
-	$sql="INSERT INTO users (tel,password) VALUES ('".$_POST["tel"]."','".$_POST["password"]."')";
-	echo "SQL:".$sql."<br>";
-	if($conn->query($sql)===TRUE){
-		echo "registration success!"."<br>";
-	}
-	else{
-		echo "registration failed!".$conn->error."<br>";
-	}
+	echo "registration success!"."<br>";
 }
 else{
-	echo "TABLE created faild!".$conn->error;
+	echo "registration failed!".$conn->error."<br>";
 }
 
 $conn->close();
