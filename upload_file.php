@@ -38,6 +38,6 @@ else{
 	echo "var:".$var."<br/>";
 	$resultFile=fopen("result.txt","r");
 	echo fgets($resultFile)."<br/>";
-	fclose(%resultFile);
+	fclose($resultFile);
 }
 ?>
