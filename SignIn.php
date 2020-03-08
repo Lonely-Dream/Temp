@@ -20,6 +20,7 @@ while($row=mysqli_fetch_array($result)){
 	//fomat=YYYY-MM-DD HH:MM:SS
 	$endTime=date("Y-m-d H:i:s");
 	$sql="UPDATE parkinfo SET endtime='".$endTime."' WHERE licenseplate='".$row[3]."' and endtime IS NULL";
+	echo $sql."<br>";
 	if(mysqli_query($con,$sql)){
 		echo $endTime." Your car is being transported by a robot. Please wait a moment."."<br>";
 		mysqli_close($con);
