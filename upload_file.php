@@ -31,10 +31,11 @@ else{
 	$params="upload/".$_FILES["file"]["name"];
 	$cmd="python3 test_PHP2.py ";
 	echo $cmd.$params."<br/>";
-	$ret=exec($cmd.$params." 2>&1",$output,$var);
-	echo $ret;
-	echo $output;
-	echo $var;
+	$ret=exec("ls 2>&1",$output,$var);
+	echo "ret:".$ret."<br/>";
+	var_dump($output);
+	echo "<br/>";
+	echo "var:"$var."<br/>";
 	
 }
 ?>
