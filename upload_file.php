@@ -73,7 +73,7 @@ else{
 	
 	//parking
 	//fomat=YYYY-MM-DD HH:MM:SS
-	$startTime=date("Y-m-d H:i:S");
+	$startTime=date("Y-m-d H:i:s");
 	
 	$sql="INSERT INTO parkinfo (licenseplate,starttime) VALUES ('".$output[0]."',".$startTime.")";
 	mysqli_query($con,"set names utf8");
