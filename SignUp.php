@@ -10,8 +10,8 @@ if($conn->connect_error){
 }
 $sql = "CREATE TABLE users(
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-tel VACHAR(11) NOT NULL,
-password VACHAR(16) NOT NULL,
+tel VARCHAR(11) NOT NULL,
+password VARCHAR(16) NOT NULL,
 facedata MEDIUMBLOB
 )";
 if($conn->query($sql)===TRUE){
