@@ -9,7 +9,7 @@ if($conn->connect_error){
 	die("connect faild:".$conn->connect_error);
 }
 
-$sql="SELECT * FROM users WHERE tel='".$_POST["tel"]."' and password='"..$_POST["password"]."'";
+$sql="SELECT * FROM users WHERE tel='".$_POST["tel"]."' and password='".$_POST["password"]."'";
 $result=$conn->query($sql);
 if($conn->num_rows()===0){
 	echo "wrong tel or password!"."<br>";

@@ -84,7 +84,7 @@ else{
 		mysqli_close($con); 
 		exit();
 	}
-	echo $startTime."Your vehicle has entered the parking lot. <br>";
+	echo $startTime." Your vehicle has entered the parking lot. <br>";
 	
 	//mysqli_free_result($result);
 	mysqli_close($con); 
