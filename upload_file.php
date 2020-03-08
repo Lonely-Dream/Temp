@@ -67,11 +67,11 @@ else{
 		mysqli_free_result($result);
 		mysqli_close($con);
 		header("Location:http://167.179.110.241/Temp/SignUp.html");
-		exit();
+		exit;
 	}
 	//parking
 	echo $row."<br>";
-	echo "Parking get start time".<br>;
+	echo "Parking get start time"."<br>";
 	
 	
 	//while($row = mysqli_fetch_array($result)){
