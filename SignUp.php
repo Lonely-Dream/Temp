@@ -12,7 +12,7 @@ $sql = "CREATE TABLE users(
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 tel VACHAR(11) NOT NULL,
 password VACHAR(16) NOT NULL,
-facedata MEDIUMBLOB,
+facedata MEDIUMBLOB
 )";
 if($conn->query($sql)===TRUE){
 	echo "TABLE users created successfully!"."<br>";
