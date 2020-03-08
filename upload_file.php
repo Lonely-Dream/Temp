@@ -9,22 +9,30 @@ else{
 	echo "Stored in:".$_FILES["file"]["tmp_name"]."<br/>";
 	echo $_FILES["file"]["tmp_name"]."<br/>";
 	echo "/var/www/html/Temp/upload/".$_FILES["file"]["name"]."<br/>";
-	
-	
-	
+	if(file_exists("upload/".$_FILES["file"]["name"])){
+		echo "File already exists."."<br/>";
+		if(unlink("upload/".$_FILES["file"]["name"])){
+			echo "unlink: True"."<br/>";
+		}
+		else{
+			echo "unlink: False"."<br/>";
+		}
+	}
+
 	if(file_exists($_FILES["file"]["tmp_name"])){
 		echo "exist"."<br/>";
+		if(is_dir("upload/")){
+			echo "Directory exists"."<br/>";
+		}
+		else{
+			echo "not dir"."<br/>";
+		}
 	}
 	else{
 		echo "not exit"."<br/>";
 	}
-	if(is_dir("/var/www/html/Temp/upload/")){
-		echo "dir"."<br/>";
-	}
-	else{
-		echo "not dir"."<br/>";
-	}
-	if(rename($_FILES["file"]["tmp_name"],"/var/www/html/Temp/upload/".$_FILES["file"]["name"])){
+	
+	if(rename($_FILES["file"]["tmp_name"],"upload/".$_FILES["file"]["name"])){
 		echo "True"."<br/>";
 	}
 	else {

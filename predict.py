@@ -571,6 +571,5 @@ if len(r)<5:
     print("result error!")
 else:
     print(lp)
-    print("result successful!")
-with open("result.txt","w") as f:
-    f.write(lp.encode('utf-8'))
+#with open("result.txt","w") as f:
+#    f.write(lp.encode('utf-8'))
