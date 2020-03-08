@@ -21,7 +21,12 @@ else{
 $sql="SELECT * FROM users";
 if($result=$conn->query($sql)){
 	while($row=mysqli_fetch_array($result)){
-		echo $row."<br>";
+		echo "<tr><td> {$row[0]}</td> ".
+			"<td>{$row[1]} </td> ".
+			"<td>{$row[2]} </td> ".
+			"<td>{$row[3]} </td> ".
+			"<td>{$row[4]} </td> ".
+			"</tr>";
 	}
 }
 else{
