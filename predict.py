@@ -5,7 +5,10 @@ import numpy as np
 from numpy.linalg import norm
 import sys
 import os
+import io
 import json
+
+sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding="utf-8")
 
 SZ = 20  # 训练图片长宽
 MAX_WIDTH = 1000  # 原始图片最大宽度
