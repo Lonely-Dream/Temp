@@ -6,8 +6,7 @@ from numpy.linalg import norm
 import sys
 import os
 import json
-reload(sys)
-sys.setdefaultencoding('utf8')
+
 SZ = 20  # 训练图片长宽
 MAX_WIDTH = 1000  # 原始图片最大宽度
 Min_Area = 2000  # 车牌区域允许最大面积
