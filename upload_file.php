@@ -31,7 +31,7 @@ else{
 	$params="upload/".$_FILES["file"]["name"];
 	$cmd="python3 test_PHP2.py ";
 	echo $cmd.$params."<br/>";
-	$output=exec($cmd.$params);
+	$output=exec($cmd.$params." 2>&1");
 	echo $output;
 	
 }
