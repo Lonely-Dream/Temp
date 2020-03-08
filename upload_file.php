@@ -36,6 +36,8 @@ else{
 	var_dump($output);
 	echo "<br/>";
 	echo "var:".$var."<br/>";
-	
+	$resultFile fopen("result.txt","r");
+	echo fgets($resultFile)."<br/>";
+	fclose(%resultFile);
 }
 ?>
