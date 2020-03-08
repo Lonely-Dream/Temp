@@ -4,7 +4,7 @@ $username="root";
 $password="caizhenhui!";
 $dbname="SmartPark";
 
-$conn = new mysqli($servername,$username,$password,$dbname);
+$conn = new mysqli($servername,$username,$password);
 if($conn->connect_error){
 	die("connect faild:".$conn->connect_error);
 }
@@ -16,6 +16,12 @@ if($conn->query($sql)===TRUE){
 }
 else{
 	echo "DataBase SmartPark created faild!".$conn->error."<br>";
+}
+$conn->close();
+
+$conn = new mysqli($servername,$username,$password,$dbname);
+if($conn->connect_error){
+	die("connect faild:".$conn->connect_error);
 }
 
 //Create users table
