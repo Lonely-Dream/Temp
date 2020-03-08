@@ -35,7 +35,7 @@ else{
 	echo "ret:".$ret."<br/>";
 	var_dump($output);
 	echo "<br/>";
-	echo "var:"$var."<br/>";
+	echo "var:".$var."<br/>";
 	
 }
 ?>
