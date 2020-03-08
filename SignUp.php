@@ -18,5 +18,11 @@ else{
 	echo "registration failed!".$conn->error."<br>";
 }
 
+$sql="SELECT * FROM users";
+if($result=$conn->query($sql)){
+	else $result."<br>";
+}
+
+
 $conn->close();
 ?>
