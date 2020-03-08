@@ -20,7 +20,9 @@ else{
 
 $sql="SELECT * FROM users";
 if($result=$conn->query($sql)){
-	echo $result."<br>";
+	while($row=mysqli_fetch_array($result)){
+		echo $row."<br>";
+	}
 }
 else{
 	echo $result."  ERROR"."<br>";
