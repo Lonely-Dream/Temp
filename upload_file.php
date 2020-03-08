@@ -79,14 +79,14 @@ else{
 	mysqli_query($con,"set names utf8");
 	$result=mysqli_query($con,$sql);
 	if(!$result){
-		echo "Registration failed!".$conn->error."<br>";
-		mysqli_free_result($result);
+		echo "Registration failed!".mysqli_error()."<br>";
+		//mysqli_free_result($result);
 		mysqli_close($con); 
 		exit();
 	}
 	echo $startTime."Your vehicle has entered the parking lot. <br>";
 	
-	mysqli_free_result($result);
+	//mysqli_free_result($result);
 	mysqli_close($con); 
 }
 ?>
