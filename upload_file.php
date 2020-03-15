@@ -76,7 +76,7 @@ else{
 		echo "alert('No relevant information found for this vehicle, please register for an account!')";
 		mysqli_free_result($result);
 		mysqli_close($con);
-		//header("Location:http://167.179.110.241/Temp/SignUp.html");
+		header("Location:http://167.179.110.241/Temp/SignUp.html");
 		exit();
 	}
 	
