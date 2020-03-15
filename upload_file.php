@@ -48,7 +48,7 @@ else{
 	//echo "<br/>";
 	//echo "var:".$var."<br/>";
 	
-	if("NULL"===$ret){
+	if("NULL"==$ret){
 		//None
 		//Jump to signIn.html
 		header("Location:http://167.179.110.241/Temp/SignIn.html");
@@ -67,6 +67,7 @@ else{
 	}
 	
 	$sql="SELECT * FROM users WHERE licenseplate='".$output[0]."'";
+	mysqli_query($con,"set names utf8");
 	$result=mysqli_query($con,$sql);
 	if(mysqli_num_rows($result)==0){
 		//empty
@@ -75,7 +76,7 @@ else{
 		echo "alert('No relevant information found for this vehicle, please register for an account!')";
 		mysqli_free_result($result);
 		mysqli_close($con);
-		header("Location:http://167.179.110.241/Temp/SignUp.html");
+		//header("Location:http://167.179.110.241/Temp/SignUp.html");
 		exit();
 	}
 	
