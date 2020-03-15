@@ -71,7 +71,8 @@ else{
 	if(mysqli_num_rows($result)==0){
 		//empty
 		//jump to signUp
-		echo "<script>alert('No relevant information found for this vehicle, please register for an account!')</script>";
+		//echo "<script>alert('No relevant information found for this vehicle, please register for an account!')</script>";
+		echo "alert('No relevant information found for this vehicle, please register for an account!')";
 		mysqli_free_result($result);
 		mysqli_close($con);
 		header("Location:http://167.179.110.241/Temp/SignUp.html");

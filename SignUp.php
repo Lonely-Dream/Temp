@@ -26,7 +26,7 @@ if($result=$conn->query($sql)){
 //registered
 $sql="INSERT INTO users (tel,password,licenseplate) VALUES ('".$_POST["tel"]."','".$_POST["password"]."','".$_POST["licenseplate"]."')";
 echo "SQL:".$sql."<br>";
-$conn->query("set names utf8")
+$conn->query("set names utf8");
 if($conn->query($sql)===TRUE){
 	echo "Registration success!"."<br>";
 }
