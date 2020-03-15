@@ -17,12 +17,7 @@ function NoCar(){
 </head>
 <body>
 
-<div>
-<button onclick="Car()">License plate detected!</button>
-<button onclick="NoCar()">No license plate detected</button>
-</div>
-
-<div id="car" style="display:none">
+<div id="car">
 <form action="upload_file.php" method="post" enctype="multipart/form-data">
 <label for="file">Filename:</label>
 <input type="file" name="file" id="file" /> 

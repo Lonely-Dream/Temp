@@ -568,7 +568,7 @@ lp=""
 for i in range(len(r)):
     lp=lp+r[i]
 if len(r)<6:
-    print("result error!")
+    print("NULL")
 else:
     print(lp)
 #with open("result.txt","w") as f:

@@ -48,6 +48,13 @@ else{
 	//echo "<br/>";
 	//echo "var:".$var."<br/>";
 	
+	if("NULL"===$ret){
+		//None
+		//Jump to signIn.html
+		header("Location:http://167.179.110.241/Temp/SignIn.html");
+		exit();
+	}
+	
 	//search LP
 	$servername="localhost";
 	$username="root";

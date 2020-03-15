@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+function Car(){
+	document.getElementById("car").style="display:"
+	document.getElementById("nocar").style="display:none"
+}
+function NoCar(){
+	document.getElementById("car").style="display:none"
+	document.getElementById("nocar").style="display:"
+}
+
+</script>
+
+</head>
+<body>
+<p>None LP</p>
+
+<div id="nocar">
+<div id="face_recognition">
+<P>Pick up the car with face:</P>
+<form action="DealFace.php" method="post" enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file" /> 
+<br />
+<input type="submit" name="submit" value="Submit" />
+</form>
+</div>
+
+<div id="manual">
+<P>Pick up the car with a password:</P>
+<form action="SignIn.php" method="post">
+Telphone Number:<input type="text" name="tel" id="tel"><br>
+Password:<input type="password" name="password" id="password"><br>
+<input type="submit" name="submit"value="Sign In">
+</form>
+</div>
+</div>
+
+</body>
+</html>
