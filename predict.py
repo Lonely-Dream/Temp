@@ -557,8 +557,8 @@ class CardPredictor:
                 break
 
         return predict_result, roi, card_color  # 识别到的字符、定位的车牌图像、车牌颜色
-#print(sys.stdout)
-sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding="utf-8")
+print(sys.stdout)
+#sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding="utf-8")
 #print(sys.stdout)
 c = CardPredictor()
 c.train_svm()
