@@ -280,8 +280,7 @@ class CardPredictor:
             img = cv2.GaussianBlur(img, (blur, blur), 0)  # 图片分辨率调整
         oldimg = img
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        # equ = cv2.equalizeHist(img)
-        # img = np.hstack((img, equ))
+
         # 去掉图像中不会是车牌的区域
         kernel = np.ones((20, 20), np.uint8)
         img_opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)

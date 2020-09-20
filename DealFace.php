@@ -1,4 +1,10 @@
 <?php
+$servername="localhost";
+$username="root";
+$password="password";
+$dbname="SmartPark";
+$myurl="http://47.93.148.239/Temp/"
+
 header("Content-type:text/html; charset=utf-8");
 if($_FILES["file"]["error"]>0){
 	echo "Error:".$_FILES["file"]["error"]."<br/>";
@@ -21,11 +27,6 @@ echo "License Plate:".$ret."<br/>";
 //echo "var:".$var."<br/>";
 
 //返回TEl
-
-$servername="localhost";
-$username="root";
-$password="caizhenhui!";
-$dbname="SmartPark";
 
 $con = mysqli_connect($servername,$username,$password,$dbname);
 if(mysqli_connect_errno()){

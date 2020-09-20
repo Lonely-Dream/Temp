@@ -1,4 +1,10 @@
 <?php
+$servername="localhost";
+$username="root";
+$password="password";
+$dbname="SmartPark";
+$myurl="http://47.93.148.239/Temp/";
+
 header("Content-type:text/html; charset=utf-8");
 if($_FILES["file"]["error"]>0){
 	echo "Error:".$_FILES["file"]["error"]."<br/>";
@@ -51,15 +57,12 @@ else{
 	if("NULL"==$ret){
 		//None
 		//Jump to signIn.html
-		header("Location:http://167.179.110.241/Temp/SignIn.html");
+		header("Location: ".$myurl."SignIn.html");
 		exit();
 	}
-	
+	//return;
 	//search LP
-	$servername="localhost";
-	$username="root";
-	$password="caizhenhui!";
-	$dbname="SmartPark";
+	echo "< script language=\"JavaScript\">alert(\"你好\");< /script>"; 
 	
 	$con = mysqli_connect($servername,$username,$password,$dbname);
 	if(mysqli_connect_errno()){
@@ -76,7 +79,7 @@ else{
 		echo "alert('No relevant information found for this vehicle, please register for an account!')";
 		mysqli_free_result($result);
 		mysqli_close($con);
-		header("Location:http://167.179.110.241/Temp/SignUp.html");
+		header("Location: ".$myurl."SignUp.html");
 		exit();
 	}
 	

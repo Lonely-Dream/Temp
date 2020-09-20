@@ -1,8 +1,9 @@
 <?php
 $servername="localhost";
 $username="root";
-$password="caizhenhui!";
+$password="password";
 $dbname="SmartPark";
+$myurl="http://47.93.148.239/Temp/"
 
 $conn = new mysqli($servername,$username,$password);
 if($conn->connect_error){

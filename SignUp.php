@@ -1,8 +1,9 @@
 <?php
 $servername="localhost";
 $username="root";
-$password="caizhenhui!";
+$password="password";
 $dbname="SmartPark";
+$myurl="http://47.93.148.239/Temp/"
 
 $conn = new mysqli($servername,$username,$password,$dbname);
 if($conn->connect_error){
@@ -16,7 +17,7 @@ if($result=$conn->query($sql)){
 		if($row[3]===$_POST["licenseplate"]){
 			//The license plate has been registered.
 			echo "<script>alert('The license plate has been registered!')</script>";
-			header("Location:http://167.179.110.241/Temp/SignUp.html");
+			header("Location:".$myurl."SignUp.html");
 			$conn->close();
 			exit();
 		}
